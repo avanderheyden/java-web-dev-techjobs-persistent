@@ -28,6 +28,9 @@ private final List<Job> jobs = new ArrayList<>();
         this.location = location;
     }
 public Employer() {
-
 }
+
+    public List<Job> getJobs() {
+        return jobs;
+    }
 }

@@ -43,8 +43,7 @@ public class SkillController {
 
         Optional optSkill = skillRepository.findById(skillId);
         if (optSkill.isPresent()) {
-            Employer employer = (Employer) optSkill.get();
-//            model.addAttribute("employer", employer);
+            Skill skill = (Skill) optSkill.get();
             model.addAttribute("skill", skillRepository.findAll());
             return "skills/view";
         } else {
@@ -53,7 +52,7 @@ public class SkillController {
     }
 
     @GetMapping("")
-    public String displayAllEmployers(Model model) {
+    public String displayAllSkills(Model model) {
         model.addAttribute("skills", skillRepository.findAll());
         return "skills/index";
     }
